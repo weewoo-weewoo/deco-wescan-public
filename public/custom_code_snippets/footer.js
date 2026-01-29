@@ -25,10 +25,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
   mainNav.appendChild(searchWrapper.firstElementChild);
 });
-
-
-fetch('https://weewoo-weewoo.github.io/deco-wescan-public/src/partials/topbar.html')
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById('remote-container-topbar').innerHTML = html;
-  });
