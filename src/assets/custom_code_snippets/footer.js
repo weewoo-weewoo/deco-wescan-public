@@ -32,11 +32,3 @@ fetch('https://weewoo-weewoo.github.io/deco-wescan-public/src/partials/topbar.ht
   .then(html => {
     document.getElementById('remote-container-topbar').innerHTML = html;
   });
-
-
-fetch('https://weewoo-weewoo.github.io/deco-wescan-public/src/partials/navigation.html')
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById('remote-container-navigation').innerHTML = html;
-  });
-
