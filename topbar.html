@@ -1,29 +1,29 @@
-    <div class="topbar">
+    <div class="topbar" role="banner">
       <div class="topbar-inner">
-        <div>
-          Free Shipping* / Pick Up   Get Extra <strong>10% OFF</strong> Coupon Code: <strong>Cart10!</strong>
+        <div class="topbar-promo">
+          Free Shipping* / Pick Up &nbsp; Get Extra <strong>10% OFF</strong> Coupon Code: <strong>Cart10!</strong>
         </div>
-        <div>
-          <a href="#" onclick="dnInlinePopup(this, 'dn_cart_over_right_popup', {
+        <div class="topbar-actions">
+          <a href="#" aria-label="Shopping cart" onclick="dnInlinePopup(this, 'dn_cart_over_right_popup', {
       valign:'none',
       halign: 'none',
       backgroundClass: 'dn-cart-over-right',
       delayBackground:400
-    });" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }"><svg width="18" height="18" viewbox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="white">
+    });" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }"><svg width="18" height="18" viewbox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="white" aria-hidden="true">
                   <path d="M14.677 5.0625H3.31451C3.1761 5.06315 3.04266 5.11418 2.93914 5.20606C2.83562 5.29793 2.7691 5.42436 2.75201 5.56172L1.75357 14.5617C1.74469 14.6401 1.75241 14.7195 1.77623 14.7948C1.80005 14.87 1.83943 14.9394 1.89182 14.9984C1.94421 15.0574 2.00843 15.1048 2.08031 15.1374C2.15219 15.1699 2.23012 15.187 2.30904 15.1875H15.6825C15.7614 15.187 15.8393 15.1699 15.9112 15.1374C15.9831 15.1048 16.0473 15.0574 16.0997 14.9984C16.1521 14.9394 16.1915 14.87 16.2153 14.7948C16.2391 14.7195 16.2468 14.6401 16.2379 14.5617L15.2395 5.56172C15.2224 5.42436 15.1559 5.29793 15.0524 5.20606C14.9489 5.11418 14.8154 5.06315 14.677 5.0625V5.0625Z" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" stroke="#fff"></path>
                   <path d="M6.1875 7.3125V5.0625C6.1875 4.31658 6.48382 3.60121 7.01126 3.07376C7.53871 2.54632 8.25408 2.25 9 2.25C9.74592 2.25 10.4613 2.54632 10.9887 3.07376C11.5162 3.60121 11.8125 4.31658 11.8125 5.0625V7.3125" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" stroke="#fff"></path>
                 </svg> Cart</a>
-          <div class="login-menu">
-            <a href="#" class="login-trigger">
-              <svg width="18" height="19" viewbox="0 0 18 19" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+          <div class="login-menu" role="navigation" aria-label="Account menu">
+            <a href="#" class="login-trigger" aria-haspopup="true" aria-expanded="false">
+              <svg width="18" height="19" viewbox="0 0 18 19" xmlns="http://www.w3.org/2000/svg" fill="#fff" aria-hidden="true">
                 <path d="M9.11406 8.6525C9.03906 8.645 8.94906 8.645 8.86656 8.6525C7.08156 8.5925 5.66406 7.13 5.66406 5.33C5.66406 3.4925 7.14906 2 8.99406 2C10.8316 2 12.3241 3.4925 12.3241 5.33C12.3166 7.13 10.8991 8.5925 9.11406 8.6525Z" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M5.36125 11.422C3.54625 12.637 3.54625 14.617 5.36125 15.8245C7.42375 17.2045 10.8063 17.2045 12.8688 15.8245C14.6838 14.6095 14.6838 12.6295 12.8688 11.422C10.8138 10.0495 7.43125 10.0495 5.36125 11.422Z" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
               Login
             </a>
-            <div class="login-dropdown">
-              <a href="/login">Login</a>
-              <a href="/register">Create account</a>
+            <div class="login-dropdown" role="menu">
+              <a href="/login" role="menuitem">Login</a>
+              <a href="/register" role="menuitem">Create account</a>
             </div>
           </div>
         </div>

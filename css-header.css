@@ -74,8 +74,24 @@
   transform: rotate(45deg);
 }
 
-/* Show on hover */
-.login-menu:hover .login-dropdown {
+/* Invisible bridge to cover the gap between trigger and dropdown */
+.login-menu::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  height: 14px;
+  display: none;
+}
+
+.login-menu:hover::after {
+  display: block;
+}
+
+/* Show on hover or keyboard focus-within */
+.login-menu:hover .login-dropdown,
+.login-menu:focus-within .login-dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -105,6 +121,46 @@
   color: #000;
 }
 
+
+/* Responsive topbar */
+@media (max-width: 768px) {
+  .topbar-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 8px 12px;
+  }
+
+  .topbar-inner > div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .topbar a {
+    margin-left: 12px;
+    font-size: 13px;
+  }
+
+  .topbar-inner > div:first-child {
+    font-size: 13px;
+  }
+
+  .login-dropdown {
+    right: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar-inner > div:first-child {
+    font-size: 12px;
+  }
+
+  .topbar a {
+    margin-left: 10px;
+    font-size: 12px;
+  }
+}
 
 /* HEADER TOPBAR CSS END */
 
