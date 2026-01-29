@@ -27,14 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-fetch('https://weewoo-weewoo.github.io/deco-wescan-public/partials/topbar.html')
+fetch('https://weewoo-weewoo.github.io/deco-wescan-public/src/partials/topbar.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('remote-container-topbar').innerHTML = html;
   });
 
 
-fetch('https://weewoo-weewoo.github.io/deco-wescan-public/partials/navigation.html')
+fetch('https://weewoo-weewoo.github.io/deco-wescan-public/src/partials/navigation.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('remote-container-navigation').innerHTML = html;
