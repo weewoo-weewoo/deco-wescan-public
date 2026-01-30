@@ -167,6 +167,10 @@ header{
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
+header .dn-large-header{
+    max-width: 1500px;
+}
+
 header .dn-logo-container {
   max-width: 240px;
 }
