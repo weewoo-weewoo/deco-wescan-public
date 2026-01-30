@@ -1,3 +1,7 @@
+.dnm-top-header-container {
+  z-index: 3000; /** Deco Admin Header  is above site header**/
+}
+
 /* HEADER TOPBAR CSS STARTED */
 .topbar {
     background-color: #e57200;
