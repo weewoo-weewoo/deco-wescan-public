@@ -8,21 +8,22 @@
 /* CSS for Sidebar **/
 
   /* --- Modern Redesign for Product Categories Sidebar --- */
-.dn-widget-blank_product_categories, .dn-widget-blank_product_filter, .dn-search-container {
-  background: #ffffff; 
-  border-radius: 16px;
+body .dn-widgets .dn-widget-blank_product_filter, 
+body .dn-widgets .dn-widget-search .dn-search-container{
+  background: #FFFFF0; 
+  border-radius: 14px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   padding: 24px 20px;
   font-family: "Poppins", "Roboto", sans-serif;
   transition: all 0.3s ease;
 }
 
-.dn-widget-blank_product_categories:hover {
+body .dn-widgets .dn-widget-blank_product_categories:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* Title */
-.dn-widget-blank_product_categories h2 {
+body .dn-widgets .dn-widget-blank_product_categories h2 {
   font-size: 1.4rem;
   font-weight: 600;
   color: #222;
@@ -32,20 +33,20 @@
 }
 
 /* Category list */
-.dn-widget-blank_product_categories ul {
+body .dn-widgets .dn-widget-blank_product_categories ul {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
 
 /* Hierarchy nodes */
-.dn-widget-blank_product_categories li {
+body .dn-widgets .dn-widget-blank_product_categories li {
   position: relative;
   padding: 6px 0 6px 16px;
   transition: all 0.25s ease;
 }
 
-.dn-widget-blank_product_categories li:hover {
+body .dn-widgets .dn-widget-blank_product_categories li:hover {
   background-color: #f9fafb;
   border-radius: 8px;
 }
