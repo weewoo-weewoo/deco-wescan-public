@@ -4,7 +4,11 @@
 }
 
 #dn_search_popup_pt {
-  z-index: 3001 !important; /** Deco Admin Header Search Popup is above Deco Adminr**/
+  z-index: 3001 !important; /** Search Popup is above Deco Adminr**/
+}
+
+#dn_cart_over_right_popup{
+    z-index: 3001 !important; /** Cart Popup is above Deco Adminr**/
 }
 
 /* HEADER TOPBAR CSS STARTED */
