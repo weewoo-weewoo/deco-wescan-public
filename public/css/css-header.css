@@ -187,6 +187,11 @@ body header nav.dn-other-nav > div:hover a {
 }
 
 /* ContactBar CSS STARTED */
+
+header.dn-lh-1rllor .dn-large-header-container .dn-large-header.dn-header-with-phone-number .dn-other {
+  width: auto;
+}
+
 .contact-bar {
   display: flex;
   align-items: center;
