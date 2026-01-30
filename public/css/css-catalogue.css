@@ -1,0 +1,391 @@
+
+  .dn-grid-text {
+	text-align: center !important;
+  }
+
+
+
+/* CSS for Sidebar **/
+
+  /* --- Modern Redesign for Product Categories Sidebar --- */
+.dn-widget-blank_product_categories, .dn-widget-blank_product_filter, .dn-search-container {
+  background: #ffffff; 
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  padding: 24px 20px;
+  font-family: "Poppins", "Roboto", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.dn-widget-blank_product_categories:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.dn-widget-blank_product_categories h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+/* Category list */
+.dn-widget-blank_product_categories ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Hierarchy nodes */
+.dn-widget-blank_product_categories li {
+  position: relative;
+  padding: 6px 0 6px 16px;
+  transition: all 0.25s ease;
+}
+
+.dn-widget-blank_product_categories li:hover {
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+/* Expanders (small indicators for submenus) */
+.dn-widget-blank_product_categories .dn-hierarchy-expander::before {
+  content: "›";
+  display: inline-block;
+  color: #888;
+  font-size: 0.9rem;
+  margin-right: 6px;
+  transform: rotate(0deg);
+  transition: transform 0.25s ease;
+}
+
+.dn-widget-blank_product_categories .dn-expanded > .dn-hierarchy-expander::before {
+  transform: rotate(90deg);
+}
+
+/* Labels and links */
+.dn-widget-blank_product_categories .dn-hierarchy-label,
+.dn-widget-blank_product_categories .dn-hierarchy-label a {
+  color: #333;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.dn-widget-blank_product_categories .dn-hierarchy-label a:hover {
+  color: #0077cc;
+}
+
+/* Nested children (indentation) */
+.dn-widget-blank_product_categories .dn-hierarchy-children {
+  padding-left: 16px;
+  margin-top: 4px;
+  border-left: 2px solid #eef1f5;
+}
+
+/* Selected category styling */
+.dn-widget-blank_product_categories .dn-selected > .dn-hierarchy-label,
+.dn-widget-blank_product_categories .dn-selected > .dn-hierarchy-label a {
+  font-weight: 600;
+  color: #0077cc;
+}
+
+/* Smooth transitions for expand/collapse if JS handles them */
+.dn-widget-blank_product_categories .dn-hierarchy-children {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+/* Mobile friendly tweaks */
+@media (max-width: 768px) {
+  .dn-widget-blank_product_categories {
+    padding: 16px;
+    box-shadow: none;
+    border: 1px solid #eaeaea;
+  }
+
+  .dn-widget-blank_product_categories h2 {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+
+
+
+/** For the Show More Colors Button **/
+
+  /* Collapsible Color Rows Styles */
+
+/* Container for color panel with overflow control */
+.dn-product-colors {
+  position: relative;
+}
+
+/* Wrapper for color cells that will be collapsed */
+.dn-color-cells-wrapper {
+  position: relative;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* Collapsed state - uses dynamically calculated height */
+.dn-color-cells-wrapper.collapsed {
+  max-height: var(--collapsed-height, 60px); /* Fallback to 60px if variable not set */
+}
+
+/* Expanded state - shows all rows */
+.dn-color-cells-wrapper.expanded {
+  max-height: none;
+}
+
+/* Gradient overlay to hint at more colors below */
+.dn-color-gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95));
+  pointer-events: none; /* Allow clicks to pass through to colors */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hide gradient when expanded */
+.dn-color-cells-wrapper.expanded + .dn-color-gradient-overlay {
+  opacity: 0;
+}
+
+/* Toggle button styles - subtle and minimal */
+.dn-color-toggle-btn {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+  transition: color 0.2s ease;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.dn-color-toggle-btn:hover {
+  color: #333;
+}
+
+.dn-color-toggle-btn:focus {
+  outline: none;
+  color: #333;
+}
+
+/* Hide toggle button if there aren't enough colors (2 rows or less) */
+.dn-color-toggle-btn.hidden {
+  display: none;
+}
+
+/* Icon styling for the toggle button - subtle chevron */
+.dn-toggle-icon {
+  display: inline-block;
+  margin-left: 2px;
+  font-size: 10px;
+  transition: transform 0.3s ease;
+  opacity: 0.6;
+}
+
+.dn-color-toggle-btn:hover .dn-toggle-icon {
+  opacity: 1;
+}
+
+/* Rotate icon when expanded */
+.dn-color-toggle-btn.expanded .dn-toggle-icon {
+  transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+<script>
+  /**
+ * Collapsible Color Rows Script
+ * Automatically collapses color rows after the 2nd row and adds toggle functionality
+ */
+
+(function() {
+  'use strict';
+
+  // Configuration
+  const VISIBLE_ROWS = 2; // Number of rows to show by default
+
+  /**
+   * Initialize collapsible color rows for all product cards
+   */
+  function initColorToggle() {
+    // Find all color panels
+    const colorPanels = document.querySelectorAll('.dn-product-colors');
+    
+    colorPanels.forEach(function(panel) {
+      setupColorPanel(panel);
+    });
+  }
+
+  /**
+   * Setup collapsible functionality for a single color panel
+   * @param {HTMLElement} panel - The color panel container
+   */
+  function setupColorPanel(panel) {
+    // Get all color cells (excluding the label)
+    const colorCells = panel.querySelectorAll('.dn-color-panel-cell');
+    
+    // Need at least one color to measure
+    if (colorCells.length === 0) {
+      return;
+    }
+
+    // Calculate the actual height of rows based on rendered cells
+    const rowHeight = calculateRowHeight(colorCells);
+    const totalHeight = calculateTotalHeight(colorCells);
+    const numberOfRows = Math.round(totalHeight / rowHeight);
+    
+    // Only proceed if there are more than the visible number of rows
+    if (numberOfRows <= VISIBLE_ROWS) {
+      return; // Not enough rows to warrant collapsing
+    }
+
+    // Calculate the collapsed height (2 rows worth)
+    const collapsedHeight = rowHeight * VISIBLE_ROWS;
+
+    // Create wrapper for color cells
+    const wrapper = document.createElement('div');
+    wrapper.className = 'dn-color-cells-wrapper collapsed';
+    
+    // Move all color cells into the wrapper
+    colorCells.forEach(function(cell) {
+      wrapper.appendChild(cell);
+    });
+    
+    // Add wrapper to panel (after the label)
+    const label = panel.querySelector('label');
+    if (label) {
+      label.parentNode.insertBefore(wrapper, label.nextSibling);
+    } else {
+      panel.appendChild(wrapper);
+    }
+
+    // Set the collapsed height dynamically based on actual measurements
+    wrapper.style.setProperty('--collapsed-height', collapsedHeight + 'px');
+
+    // Create gradient overlay
+    const gradient = document.createElement('div');
+    gradient.className = 'dn-color-gradient-overlay';
+    panel.insertBefore(gradient, wrapper.nextSibling);
+
+    // Create toggle button
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'dn-color-toggle-btn';
+    toggleBtn.innerHTML = 'View all <span class="dn-toggle-icon">▼</span>';
+    toggleBtn.setAttribute('type', 'button');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    
+    // Add toggle button after the wrapper
+    panel.appendChild(toggleBtn);
+
+    // Add click event listener to toggle button
+    toggleBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleColors(wrapper, toggleBtn, gradient);
+    });
+  }
+
+  /**
+   * Calculate the height of a single row by finding the height of the first color cell
+   * @param {NodeList} colorCells - All color cell elements
+   * @returns {number} Height of one row in pixels
+   */
+  function calculateRowHeight(colorCells) {
+    if (colorCells.length === 0) return 0;
+    
+    // Get the height of the first cell (including margin)
+    const firstCell = colorCells[0];
+    const cellHeight = firstCell.offsetHeight;
+    const cellStyle = window.getComputedStyle(firstCell);
+    const marginTop = parseFloat(cellStyle.marginTop) || 0;
+    const marginBottom = parseFloat(cellStyle.marginBottom) || 0;
+    
+    return cellHeight + marginTop + marginBottom;
+  }
+
+  /**
+   * Calculate the total height of all color cells
+   * @param {NodeList} colorCells - All color cell elements
+   * @returns {number} Total height in pixels
+   */
+  function calculateTotalHeight(colorCells) {
+    if (colorCells.length === 0) return 0;
+    
+    // Find the top of the first cell and bottom of the last cell
+    const firstCell = colorCells[0];
+    const lastCell = colorCells[colorCells.length - 1];
+    
+    const firstCellTop = firstCell.offsetTop;
+    const lastCellBottom = lastCell.offsetTop + lastCell.offsetHeight;
+    
+    return lastCellBottom - firstCellTop;
+  }
+
+  /**
+   * Toggle the visibility of color rows
+   * @param {HTMLElement} wrapper - The color cells wrapper
+   * @param {HTMLElement} button - The toggle button
+   * @param {HTMLElement} gradient - The gradient overlay
+   */
+  function toggleColors(wrapper, button, gradient) {
+    const isCollapsed = wrapper.classList.contains('collapsed');
+    
+    if (isCollapsed) {
+      // Expand: show all colors
+      wrapper.classList.remove('collapsed');
+      wrapper.classList.add('expanded');
+      button.classList.add('expanded');
+      button.innerHTML = 'View less <span class="dn-toggle-icon">▼</span>';
+      button.setAttribute('aria-expanded', 'true');
+    } else {
+      // Collapse: hide colors after 2nd row
+      wrapper.classList.remove('expanded');
+      wrapper.classList.add('collapsed');
+      button.classList.remove('expanded');
+      button.innerHTML = 'View all <span class="dn-toggle-icon">▼</span>';
+      button.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initColorToggle);
+  } else {
+    // DOM is already ready
+    initColorToggle();
+  }
+
+  // Re-initialize if new products are loaded dynamically (e.g., pagination)
+  // You may need to adjust this based on your pagination implementation
+  window.reinitColorToggle = initColorToggle;
+
+})();
+ 
+  
+  
+  
+</script>
