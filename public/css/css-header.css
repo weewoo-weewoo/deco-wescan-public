@@ -33,6 +33,7 @@
 
 .login-menu {
   position: relative;
+  z-index: 2001;
   display: inline-block;
 }
 
@@ -58,7 +59,7 @@
   visibility: hidden;
   transform: translateY(6px);
   transition: all 0.2s ease;
-  z-index: 1000;
+  z-index: 2002;;
 }
 
 /* Arrow */
