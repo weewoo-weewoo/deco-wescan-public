@@ -9,7 +9,8 @@
 
   /* --- Modern Redesign for Product Categories Sidebar --- */
 body .dn-widgets .dn-widget-blank_product_filter, 
-body .dn-widgets .dn-widget-search .dn-search-container{
+body .dn-widgets .dn-widget-search .dn-search-container
+body .dn-widgets .dn-widget-search .dn-widget-blank_product_categories {
   background: #FAFAFA; 
   border-radius: 14px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
