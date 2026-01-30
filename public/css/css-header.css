@@ -169,6 +169,7 @@ header{
 
 header .dn-large-header{
     max-width: 1500px;
+    
 }
 
 header .dn-logo-container {
@@ -197,7 +198,8 @@ header.dn-lh-1rllor .dn-large-header-container .dn-large-header .dn-logo-and-nav
 }
 
 header.dn-lh-1rllor .dn-large-header-container .dn-large-header.dn-header-with-phone-number .dn-other {
-  width: auto;
+    margin-left: auto;
+    align-self: center;
 }
 
 .contact-bar {
