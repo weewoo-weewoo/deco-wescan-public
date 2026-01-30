@@ -10,17 +10,13 @@
   /* --- Modern Redesign for Product Categories Sidebar --- */
 body .dn-widgets .dn-widget-blank_product_filter, 
 body .dn-widgets .dn-widget-search .dn-search-container
-body .dn-widgets .dn-widget-search .dn-widget-blank_product_categories {
+body .dn-widgets .dn-widget-blank_product_categories {
   background: #FAFAFA; 
   border-radius: 14px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   padding: 24px 20px;
   font-family: "Poppins", "Roboto", sans-serif;
   transition: all 0.3s ease;
-}
-
-body .dn-widgets .dn-widget-blank_product_categories:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* Title */
