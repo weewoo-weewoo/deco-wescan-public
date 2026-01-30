@@ -167,6 +167,11 @@ header{
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
+header .dn-large-header{
+    max-width: 1500px;
+    
+}
+
 header .dn-logo-container {
   max-width: 240px;
 }
@@ -187,6 +192,16 @@ body header nav.dn-other-nav > div:hover a {
 }
 
 /* ContactBar CSS STARTED */
+
+header.dn-lh-1rllor .dn-large-header-container .dn-large-header .dn-logo-and-nav-container {
+  width: auto;
+}
+
+header.dn-lh-1rllor .dn-large-header-container .dn-large-header.dn-header-with-phone-number .dn-other {
+    margin-left: auto;
+    align-self: center;
+}
+
 .contact-bar {
   display: flex;
   align-items: center;
@@ -254,7 +269,7 @@ body header nav.dn-other-nav > div:hover a {
   display: block;
   font-size: 12px;
   line-height: 1.3;
-  color: #000000;
+  color: #FFF;
   text-decoration: none;
   margin-bottom: 2px;
   text-align:left;
@@ -265,7 +280,7 @@ body header nav.dn-other-nav > div:hover a {
   font-size: 16px;
   font-weight: 600;
   line-height: 1.3;
-  color: #232528;
+  color: #FFF;
 }
 
 /* Responsive tweaks */
